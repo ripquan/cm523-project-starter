@@ -26,13 +26,8 @@
   <body>
     <!-- YOUR HTML GOES HERE -->
     <div id= "spot-menu" class="overlay" style="height: 0%;">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <div class="overlay-content">
-        <div class="menu-group">
-          <label for="address">Address:
-          <input type="text" id="address" name="address">
-          </label>
-        </div>
+        
         <div class="menu-group">
           <label for="spot-name">Spot Name:
           <input type="text" id="spot-name" name="spot-name">
@@ -43,8 +38,8 @@
           <input type="text" id="description" name="description">
           </label>
         </div>
-        <div class="menu-group" id="spot-pic">
-          <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48">
+        <div class="menu-group">
+          <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48" id="spot-pic">
         </div>
         <div class="menu-group">
           <label for="spot-type">Spot Type</label>
@@ -78,15 +73,10 @@
           <button id="upload">Upload</button>
         </div>
     </div>
-     <header>
+     <header id="header">
         <h1 id="cycle"></h1>
         <nav>
-          <button id="new-spot" onclick="openNav()">New Spot</button>
-          <div class="form-group">
-            <label for="search">Search:
-              <input type="text" id="search" name="search">
-            </label>
-          </div>
+          Double Click Location to Upload Spot
         </nav>
      </header>
       <div id="map"></div>
