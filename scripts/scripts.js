@@ -9,36 +9,41 @@ const header = document.getElementById('header');
 let spotName = document.getElementById('spot-name');
 let description = document.getElementById('description');
 let spotPic = document.getElementById('spot-pic');
+let imageOutput = document.getElementById('output');
 let spotType = document.getElementById('spot-type');
 let rating = document.getElementById('rating');
 let bustFactor = document.getElementById('bust-factor');
 let uploadBtn = document.getElementById('upload');
-
+let marker = '';
 
 
 map.on("dblclick", function(e){
-   var marker = new L.Marker([e.latlng.lat, e.latlng.lng]).addTo(map);
+   marker = new L.Marker([e.latlng.lat, e.latlng.lng]).addTo(map);
    spotMenu.classList.toggle("open");
    header.classList.toggle("close");
-   
+   let pins = [];
+
    function pinInfo(){
     let info = {};
     info.spotName = spotName.value;
     info.description = description.value;
-    info.spotPic = spotPic.value;
+    info.imageOutput = imageOutput.value;
     info.spotType = spotType.value;
     info.rating = rating.value;
     info.bustFactor = bustFactor.value;
-    marker.bindPopup(`Spot Name: ${info.spotName}\nDescription: ${info.description}\n${info.spotPic}\nSpot Type: ${info.spotType}\nRating: ${info.rating}  Bust Factor: ${info.bustFactor}`).openPopup();
-    spotMenu.classList.toggle("open");
-    header.classList.toggle("close");
+   // marker.bindPopup(`Spot Name: ${info.spotName}\nDescription: ${info.description}\n${info.spotPic}\nSpot Type: ${info.spotType}\nRating: ${info.rating}  Bust Factor: ${info.bustFactor}`).openPopup();
+    
+    pins.push(info);
+    updatePins(pins);
    }
-  
    uploadBtn.addEventListener('click', pinInfo);
-   
-
 })
+uploadBtn.addEventListener('click', toggleMenus);
+function toggleMenus(){
+  spotMenu.classList.toggle("open");
+  header.classList.toggle("close");
 
+}
 // function pinInfo(){
 // 	let info = {};
 // 	info.spotName = spotName.value;
@@ -55,3 +60,30 @@ map.on("dblclick", function(e){
 // function addPin() {
 
 // }
+
+
+function updatePins(pins){
+  console.log('pin array' , pins);
+  pins.forEach( pin => {
+    console.log('loop');
+    marker.bindPopup(`Spot Name: ${pin.spotName}\nDescription: ${pin.description}\n${pin.imageOutput}\nSpot Type: ${pin.spotType}\nRating: ${pin.rating}  Bust Factor: ${pin.bustFactor}`).openPopup();
+
+  });
+}
+
+spotPic.addEventListener("change", async () => {
+  let [file] = spotPic.files
+
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    imageOutput.src = e.target.result;
+  };
+
+  reader.onerror = (err) => {
+      console.error("Error reading file:", err);
+      alert("An error occurred while reading the file.");
+  };
+
+
+  reader.readAsDataURL(file);
+})

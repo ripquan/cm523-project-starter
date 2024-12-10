@@ -7,7 +7,7 @@
     <!-- PUT A TITLE joe HERE -->
     <title>Spot Drop</title>
     <!-- PUT A DESCRIPTION IN HERE -->
-    <meta name="description" content="describe content of the page here...." />
+    <meta name="description" content="Mark your skate spots" />
     <!-- LINK TO NORMALIZE (FOR CONSISTENCY) -->
     <link rel="stylesheet" href="styles/normalize.css" />
     <!-- LINK TO ANY FRAMEWORK STYLES HERE-->
@@ -39,39 +39,42 @@
           </label>
         </div>
         <div class="menu-group">
-          <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48" id="spot-pic">
+          <input type="file" id="spot-pic"/> 
+          <img id="output" src="" alt="" width="48" height="48">
         </div>
         <div class="menu-group">
           <label for="spot-type">Spot Type</label>
           <select id="spot-type" name="spot-type">
-            <option value="ledge">Ledge></option>
-            <option value="stair">Stair Set</option>
-            <option value="handrail">Handrail</option>
-            <option value="hubba">Hubba</option>
-            <option value="mannypad">Manny Pad</option>
+            <option value="Ledge">Ledge</option>
+            <option value="Stair set">Stair Set</option>
+            <option value="Handrail">Handrail</option>
+            <option value="Hubba">Hubba</option>
+            <option value="Manual pad">Manual Pad</option>
           </select>
         </div>
-        <div class="menu-group" id="rating">
-          <form>
-            <input type="checkbox" id="1star" name="1star" value="1">
-            <input type="checkbox" id="2star" name="2star" value="2">
-            <input type="checkbox" id="3star" name="3star" value="3">
-            <input type="checkbox" id="4star" name="4star" value="4">
-            <input type="checkbox" id="5star" name="5star" value="5">
-          </form>
-        </div>
-        <div class="menu-group" id="bust-factor"></div>
-          <form>
-            <input type="checkbox" id="1bust" name="1bust" value="1">
-            <input type="checkbox" id="2bust" name="2bust" value="2">
-            <input type="checkbox" id="3bust" name="3bust" value="3">
-            <input type="checkbox" id="4bust" name="4bust" value="4">
-            <input type="checkbox" id="5bust" name="5bust" value="5">
+        <div class="menu-group">
+          <form id="rating" class="rating"> Rating
+            <input type="radio" id="1star" name="rating" value="1">
+            <input type="radio" id="2star" name="rating" value="2">
+            <input type="radio" id="3star" name="rating" value="3">
+            <input type="radio" id="4star" name="rating" value="4">
+            <input type="radio" id="5star" name="rating" value="5">
           </form>
         </div>
         <div class="menu-group">
+          <form id="bust-factor" class="bust"> Bust Factor
+            <input type="radio" id="1bust" name="bustlevel" value="1">
+            <input type="radio" id="2bust" name="bustlevel" value="2">
+            <input type="radio" id="3bust" name="bustlevel" value="3">
+            <input type="radio" id="4bust" name="bustlevel" value="4">
+            <input type="radio" id="5bust" name="bustlevel" value="5">
+          </form>
+        </div>
+        <div class="menu-group"></div>
           <button id="upload">Upload</button>
         </div>
+        </div>
+        
     </div>
      <header id="header">
         <h1 id="cycle"></h1>
@@ -80,6 +83,12 @@
         </nav>
      </header>
       <div id="map"></div>
+      <footer>
+        <a href="https://cm523a1fall2024.slack.com/files/U07LEHRU7AT/F07PGUXHQSK/523_project_proposal.pdf">Project Proposal</a>
+        <a href="https://docs.google.com/document/d/1D02gcR7TPL2ssmdP1OPK5rv1BhQXnhHdlUGgsphIhwc/edit?usp=sharing">Wireframes</a>
+        <a href="https://docs.google.com/document/d/1zg88tme6QUa2W66bXIfvIcaXh463daiVwfzSwxIQ7nI/edit?usp=sharing">Design Doc</a>
+        <a href="https://docs.google.com/document/d/1peuGhu3du5YVd9CA89qII9UuQtltepgRdx3AI3sOAyU/edit?usp=sharing">UX Report</a>
+      </footer>
 
     <!-- YOUR EXTERNAL PLUG-IN MAY ASK YOU TO PUT A SCRIPT TAG HERE. -->
   </body>
