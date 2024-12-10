@@ -203,6 +203,7 @@ nav {
 button {
   border: 2px solid rgb(27, 21, 21);
   font-family: "Rubik 80s Fade", system-ui;
+  font-size: 1.5em;
 }
 
 button:hover{

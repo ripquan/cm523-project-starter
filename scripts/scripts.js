@@ -11,8 +11,8 @@ let description = document.getElementById('description');
 let spotPic = document.getElementById('spot-pic');
 let imageOutput = document.getElementById('output');
 let spotType = document.getElementById('spot-type');
-let rating = document.getElementById('rating');
-let bustFactor = document.getElementById('bust-factor');
+let rating = document.getElementById('star');
+let bustFactor = document.getElementById('bust');
 let uploadBtn = document.getElementById('upload');
 let marker = '';
 
